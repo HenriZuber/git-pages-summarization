@@ -32,7 +32,8 @@ const text_summarize = async () => {
     console.log("response:")
     console.log(myJson)
     if (myJson.success == true){
-        var summarized_text = myJson.complete_processed_data[0].processed_data[0]
+        // var summarized_text = myJson.complete_processed_data[0].processed_data[0]
+        var summarized_text = myJson.complete_processed_data[0].processed_data.gensim[0]
     }
     console.log("heyo")
     console.log(summarized_text)
