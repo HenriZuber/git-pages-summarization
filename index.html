@@ -82,45 +82,58 @@
     <!--Header Section End-->
 
     <!-- Slider Section Start Here -->
+
     <div class="rs-main-slider">
+        <div class='row' style="margin-top: 8%;">
+        </div>
+        <div class="row" style="height:100%;">
+            <div class="row" style="width:90%; margin-left: 5%; height:100%;">
+                <style>
+                    iframe {
+                        width: 100%;
+                        height: 400px;
+                        border-radius: 10px;
+                        
+                        background: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 100% 100%"><text fill="white" x="50%" y="50%" font-family="\'Lucida Grande\', sans-serif" font-size="24" text-anchor="middle">Loading...</text></svg>') 0px 0px no-repeat;
+                    }
+                </style>
+                <iframe frameBorder="0" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vS9cHPFFBXcl7-EMLhfEOprL-cPOXwjQmbYRqV4Rew30kv0Osxz5b1jBga7Yjd96SvocrxLuP-8_awz/pubhtml?gid=0&amp;single=true&amp;widget=true&amp;headers=false&amp;chrome=false&amp;range=Sheet1!A1:HH"></iframe>
+            </div> 
+        </div>
         <div class="row">
             <div class="neuron-contact col-lg-6 pl-30">
-                <div class="contact-form pt-100 md-pt-50 pb-100">
-                    <div id="form-messages" style="margin-top:5%"></div>
+                <div class="contact-form pt-20 md-pt-20 pb-20" style="margin-left: 6.5%;">
                     <form id="text-form">
-                        <div class="form-field">
-                            <textarea rows="14" id="message" name="message" required>La contraception sera désormais gratuite pour les femmes jusqu’à 25 ans, et non plus réservée aux jeunes filles mineures, a annoncé, jeudi 9 septembre, sur France 2, le ministre de la santé, Olivier Véran. « J’ai fait le constat, en lien avec les autorités scientifiques, d’un recul de la contraception chez un certain nombre de jeunes femmes, et le premier motif, c’est un renoncement pour raisons financières », a précisé M. Véran.
-
-« Il y aura une prise en charge de la contraception hormonale, du bilan biologique qui peut aller avec, de la consultation de prescription et de tous les soins qui sont liés à cette contraception, jusqu’à 25 ans, à compter du 1er janvier », a détaillé le ministre sur France 2. Une telle prise en charge était déjà offerte aux mineures âgées de 15 à 18 ans.
-
-« Toutes les contraceptions féminines prises en charge par l’Assurance-maladie, sans distinction », a par la suite précisé le ministère de la santé. Cette mesure permettra de couvrir en tiers-payant le coût de la contraception et des actes liés ainsi que la consultation chez le médecin prescripteur du contraceptif et l’éventuelle réaction de tests biologiques.
-
-Le ministre de la Santé, Olivier Véran, l'a annoncé ce jeudi 9 septembre, dans @telematin. Selon le ministre, la me… https://t.co/d0r8BzqRIh
- 
-Jusqu’ici, l’Assurance-maladie remoursait à 100 %, jusqu’à 18 ans, certaines pilules, les implants, les stérilets et les diagrammes. L’Assurance-maladie, qui détaille sur son site la liste et les modalités de remboursement, précise que certaines pilules contraceptives, les patchs contraceptifs, les anneaux vaginaux, les capes cervicales, les spermicides et les préservatifs (à l’exception de deux marques) ne sont pas pris en charge.
-« Un effort de 21 millions d’euros »
-
-Cet élargissement de la gratuité représente « un effort de 21 millions d’euros » par an, à compter du 1er janvier, a-t-il encore dit.
-
-L’âge maximal a été fixé à 25 ans, car « c’est un âge qui correspond, en termes de vie économique, sociale et de revenus » à « davantage d’autonomie », a ajouté le ministre. « C’est aussi l’âge où l’on va quitter définitivement la complémentaire de santé parentale ».
-
-Depuis 2013, la gratuité de la contraception était déjà accordée aux femmes à partir de 15 ans jusqu’à leurs 18 ans, entraînant une baisse du recours à l’interruption volontaire de grossesse (IVG) – le taux est passé de 9,5 ‰ à 6 ‰ entre 2012 et 2018. Depuis août 2020, la gratuité a été étendue aux moins de 15 ans.
-
-« Chaque année, près de 1 000 jeunes filles de 12 à 14 ans sont enceintes en France », avait expliqué le gouvernement à la fin de 2019 pour justifier cette extension aux moins de 15 ans, précisant : « Parmi ces grossesses, 770 se concluent par une IVG. »
-                            </textarea>
+                        <h4 style="margin-bottom: 5px; color:white;"> Que voulez-vous savoir sur ces données:</h4>
+                        <div class="form-field" >
+                            <input style="margin-bottom: 2%;" type="text" placeholder="Requête" id="entry" name="entry" required="" value="La moyenne des investissements en juin 2018 en Fintech.">
                         </div>
                         <div class="form-button">
-                            <button id="summ_button" type="button" onclick="text_summarize()">ENVOYER !</button>
+                            <button id="entry_button" type="button" onclick="get_sheet_request()">ENVOYER !</button>
                         </div>
                     </form>
                 </div>
             </div>
-            <div class="col-lg-5 pl-15 md-pl-15 mt-150">
+            <div class="col-lg-5 pl-20 md-pl-20 mt-20">
                 <div class="sec-title mb-36">
-                    <h2 class="title bg-left" style="color:white">Résumé</h2>
-                    <p id="texte_resume" style="color:white">L'article résumé apparaitra ici.</p>
+                    <h4 style="color:white">Réponse de la requête:</h4>
+                    <p id="texte_requete" style="color:white; text-align:center">La réponse apparaitra ici.</p>
                     <p class="margin-0"></p>
                 </div>
+            </div>
+        </div>
+        <div class="row" style="width:80%; margin-left: 10%;">
+            <div class="pl-20 md-pl-20 mt-20">
+                <h4 style="color:white">Exemples de requêtes:</h4>
+                <p style="color:white; text-align:left">
+Le nombre d'investissement de décembre 2019 en biotech/health en round A. <br>
+La moyenne des investissements le 18 décembre 2019 en Fintech en série B.<br>
+Le mois où la moyenne des investissements est maximale.<br>
+La catégorie de la moyenne maximale des investissements en série B.<br>
+La catégorie du nombre maximal de série A.<br>
+L'année où le nombre d'investissement est minimal.<br>
+La catégorie où la moyenne des investissements est maximale à San Francisco.<br>
+</p>
             </div>
         </div>
     </div>

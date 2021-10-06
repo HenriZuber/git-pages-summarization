@@ -1,5 +1,5 @@
-const text_summarize = async () => {
-    document.getElementById("summ_button").disabled = true;
+const get_sheet_request = async () => {
+    document.getElementById("entry_button").disabled = true;
 
     var form_arr = $('form').serializeArray()
     console.log('logito')
@@ -7,19 +7,15 @@ const text_summarize = async () => {
 
     myBody = {
         "secret_id":"]4j[5-S]Z-?%]meay{@6k9Jfxj=4xuZ52EF)?YK:crYekX8*xj;rCYkf79(#",
-        "data":[
-            {
-                "text":[text_to_summ]
-            }
-        ]
+        "entry":text_to_summ
     }   
 
     request_body = JSON.stringify(myBody)
 
-    var ptag = document.getElementById('texte_resume');
+    var ptag = document.getElementById('texte_requete');
     ptag.innerHTML = "Loading ...";
 
-    const response = await fetch('https://news-summarization-keygciauya-ew.a.run.app/summary_generator', {
+    const response = await fetch('https://sheets-chatbot-keygciauya-ew.a.run.app/sheets_bot', {
         method: 'POST',
         body: request_body, // string or object
         headers: {
@@ -33,12 +29,12 @@ const text_summarize = async () => {
     console.log(myJson)
     if (myJson.success == true){
         // var summarized_text = myJson.complete_processed_data[0].processed_data[0]
-        var summarized_text = myJson.complete_processed_data[0].processed_data.gensim[0]
+        var summarized_text = myJson.complete_processed_data
     }
     console.log("heyoo")
     console.log(summarized_text)
 
     ptag.innerHTML = summarized_text;
 
-    document.getElementById("summ_button").disabled = false;
+    document.getElementById("entry_button").disabled = false;
 } 
