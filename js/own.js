@@ -34,6 +34,10 @@ const get_sheet_request = async () => {
     console.log("heyoo")
     console.log(summarized_text)
 
+    if (summarized_text == null){
+        console.log("je n'ai pas compris")
+        summarized_text = "Votre requête n'a pas été comprise. Pouvez-vous réessayer ?"
+    }
     ptag.innerHTML = summarized_text;
 
     document.getElementById("entry_button").disabled = false;
