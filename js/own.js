@@ -1,7 +1,16 @@
 var loading_int = 0
 var keep_loading = false;
 
+var input = document.getElementById("entry");
+input.addEventListener("keyup", function(event) {
+    if (event.key == "Enter") {
+    event.preventDefault();
+    document.getElementById("entry_button").click();
+    }
+});
+
 const get_sheet_request = async () => {
+    console.log("Request started ...")
     document.getElementById("entry_button").disabled = true;
     hide_all();
     loading_int = 0;
@@ -12,8 +21,7 @@ const get_sheet_request = async () => {
     loading_advance();
     toggle_loading_row();
 
-    var form_arr = $('form').serializeArray()
-    var text_to_summ = form_arr[0].value
+    var text_to_summ = document.getElementById('entry').value;
 
     var currentDate = new Date();
     var str_curr_date = currentDate.getFullYear() + '-' + (currentDate.getMonth() + 1) + '-' + currentDate.getDate();
